@@ -5,8 +5,8 @@ param location string = resourceGroup().location
 var appServicePlanName = toLower('AppServicePlan-${webAppName}')
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {
-  name: appServicePlanName
-  location: location
+  name: eshoponweb-webapp55318352
+  location: eastus
   properties: {
     reserved: true
   }
@@ -15,9 +15,9 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {
   }
 }
 resource appService 'Microsoft.Web/sites@2022-09-01' = {
-  name: webAppName
+  name: eshoponweb-webapp55318352
   kind: 'app'
-  location: location
+  location: eastus
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
